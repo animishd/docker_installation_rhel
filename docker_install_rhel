@@ -1,0 +1,25 @@
+To Check the Docker Yum available or not.
+--> cd /etc/yum.repos.d/
+
+if no Repo found then need to create a Repo in the same dir(/etc/yum.repos.d/)
+--> vim docker.repo
+
+[docker]
+baseurl=https://download.docker.com/linux/centos/7/x86_64/stable/
+gpgcheck=0
+
+To check the Docker repo is created sucessfully created or not.
+
+--> yum repolist
+
+Installation of Docker
+
+--> yum install docker-ce --nobest
+
+To Check the Docker is sucessfully installed or not
+
+--> rpm -aq | grep docker-ce
+
+To Start Docker Service
+
+--> systemctl start docker
